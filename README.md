@@ -6,4 +6,4 @@ Live at: **https://petertroll.com**
 
 ---
 
-Built with plain HTML & CSS. Deployed via GitHub Pages.
+
