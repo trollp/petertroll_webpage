@@ -10,10 +10,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:         #0d0d0d;
-      --bg-card:    #151515;
-      --bg-hover:   #1c1c1c;
-      --border:     #222;
+      --bg:         #0a0f1e;
+      --bg-card:    #0f1628;
+      --bg-hover:   #151d35;
+      --border:     #1e2a45;
       --accent:     #4f9cf9;
       --accent-dim: #2a5a99;
       --text:       #e8e8e8;
@@ -42,7 +42,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(13,13,13,0.85);
+      background: rgba(10,15,30,0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -132,15 +132,8 @@
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-dim), var(--accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.04em;
-      user-select: none;
+      object-fit: cover;
+      border: 2px solid var(--border);
     }
 
     .hero-meta h1 {
@@ -565,7 +558,7 @@
     <!-- ── Hero ───────────────────────────────────────────────────────── -->
     <section id="hero">
       <div class="hero-top">
-        <div class="avatar">PT</div>
+        <img src="https://media.licdn.com/dms/image/v2/C4E03AQGHKOglYLNrmw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1630670270466?e=1775692800&v=beta&t=oNagu96oWe5ejWBzlOoiFR1nksqAlFtdWn7CNfPb2Po" alt="Peter Troll" class="avatar" />
         <div class="hero-meta">
           <h1>Peter Troll</h1>
           <div class="title">Co-founder &amp; Head of IoT Development at <strong>IPercept</strong></div>
@@ -609,7 +602,7 @@
           <div class="timeline-content">
             <h3>Co-founder &amp; Head of IoT Development</h3>
             <div class="org">IPercept · Stockholm, Sweden</div>
-            <p>Building industrial AI for CNC machine monitoring. Leading development of the Motion Pattern Method™, CNC Copilot™, and Machine Health Model. Presented at NVIDIA GTC. Operating at the frontier of Physical AI and industrial IoT.</p>
+            <p>Building industrial AI for CNC machine monitoring. Leading development of the Motion Pattern Method™, CNC Copilot™, and Machine Health Model. Operating at the frontier of Physical AI and industrial IoT.</p>
           </div>
         </div>
 
@@ -683,37 +676,37 @@
       <div class="skills-grid">
 
         <div class="skill-card">
-          <div class="skill-icon">⚙️</div>
+          <div class="skill-icon"></div>
           <h3>IoT Development</h3>
           <p>End-to-end IoT systems for industrial environments — hardware, firmware, cloud connectivity.</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🤖</div>
+          <div class="skill-icon"></div>
           <h3>Industrial AI</h3>
           <p>Machine monitoring, anomaly detection, and AI-driven insights for CNC and manufacturing systems.</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🔬</div>
+          <div class="skill-icon"></div>
           <h3>Robotics &amp; Mechatronics</h3>
           <p>Systems integration across mechanical, electrical, and software domains. MSc background at BME.</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">📊</div>
+          <div class="skill-icon"></div>
           <h3>LabVIEW</h3>
           <p>Data acquisition, signal processing, and instrumentation using National Instruments LabVIEW.</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🏗️</div>
+          <div class="skill-icon"></div>
           <h3>Engineering Leadership</h3>
           <p>Co-founder experience — driving product, team, and technical strategy from zero to production.</p>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🖥️</div>
+          <div class="skill-icon"></div>
           <h3>Self-Hosted &amp; Home Lab</h3>
           <p>Hobby-grade infrastructure tinkering — self-hosted services, networking, and home automation.</p>
         </div>
@@ -736,30 +729,30 @@
         <!-- Add your projects here -->
 
         <a href="#" class="project-card" title="Self-hosted home lab">
-          <div class="project-icon">🏠</div>
+          <div class="project-icon"></div>
           <h3>Home Lab</h3>
           <p>Self-hosted infrastructure running various services locally — DNS, media, monitoring, and more. Because the cloud is just someone else's computer.</p>
           <span class="project-link">Self-hosted · Personal</span>
         </a>
 
         <a href="#" class="project-card" title="Home automation">
-          <div class="project-icon">🔌</div>
+          <div class="project-icon"></div>
           <h3>Home Automation</h3>
           <p>IoT tinkering at home — sensors, automations, and integrations. Applying the same thinking as industrial IoT but on a smaller (and more personal) scale.</p>
           <span class="project-link">IoT · Home</span>
         </a>
 
         <a href="#" class="project-card" title="Monitoring stack">
-          <div class="project-icon">📡</div>
+          <div class="project-icon"></div>
           <h3>Self-Hosted Monitoring</h3>
           <p>Observability stack for home services — metrics, dashboards, and alerting. Because you can't improve what you don't measure.</p>
           <span class="project-link">Infra · Self-hosted</span>
         </a>
 
         <a href="https://www.linkedin.com/company/ipercept/" target="_blank" rel="noopener" class="project-card" title="IPercept">
-          <div class="project-icon">🏭</div>
+          <div class="project-icon"></div>
           <h3>IPercept</h3>
-          <p>Co-founded and built an industrial AI platform for CNC machine monitoring. Motion Pattern Method™, CNC Copilot™, Machine Health Model. Presented at NVIDIA GTC.</p>
+          <p>Co-founded and built an industrial AI platform for CNC machine monitoring. Motion Pattern Method™, CNC Copilot™, Machine Health Model.</p>
           <span class="project-link">ipercept.io →</span>
         </a>
 
@@ -775,28 +768,28 @@
 
       <!-- Svenska Klassikern highlight -->
       <div class="klassiker-banner">
-        <div class="banner-label">🏅 Achievement</div>
+        <div class="banner-label"> Achievement</div>
         <h3>Svenska Klassikern — Completed</h3>
         <p>One of Sweden's most prestigious multi-sport achievements: completing all four classic events in a single year. A test of endurance across ski, bike, run, and open water swim.</p>
 
         <div class="klassiker-events">
           <div class="klassiker-event">
-            <div class="ev-name">⛷ Vasaloppet</div>
+            <div class="ev-name"> Vasaloppet</div>
             <div class="ev-desc">90 km cross-country ski · Sälen → Mora</div>
             <div class="ev-result"><!-- Add year / finish time --></div>
           </div>
           <div class="klassiker-event">
-            <div class="ev-name">🚴 Vätternrundan</div>
+            <div class="ev-name"> Vätternrundan</div>
             <div class="ev-desc">300 km cycling · Around Lake Vättern</div>
             <div class="ev-result"><!-- Add year / finish time --></div>
           </div>
           <div class="klassiker-event">
-            <div class="ev-name">🏃 Lidingöloppet</div>
+            <div class="ev-name"> Lidingöloppet</div>
             <div class="ev-desc">30 km trail run · Lidingö</div>
             <div class="ev-result"><!-- Add year / finish time --></div>
           </div>
           <div class="klassiker-event">
-            <div class="ev-name">🏊 Vansbrosimningen</div>
+            <div class="ev-name"> Vansbrosimningen</div>
             <div class="ev-desc">3 km open water swim · Vansbro</div>
             <div class="ev-result"><!-- Add year / finish time --></div>
           </div>
@@ -806,21 +799,21 @@
       <!-- General sports -->
       <div class="sports-list">
         <div class="sport-item">
-          <div class="sport-icon">🚴</div>
+          <div class="sport-icon"></div>
           <div class="sport-text">
             <h3>Cycling</h3>
             <p>Long-distance road cycling. Vätternrundan vet.</p>
           </div>
         </div>
         <div class="sport-item">
-          <div class="sport-icon">🏊</div>
+          <div class="sport-icon"></div>
           <div class="sport-text">
             <h3>Swimming</h3>
             <p>Open water and pool. Vansbrosimningen finisher.</p>
           </div>
         </div>
         <div class="sport-item">
-          <div class="sport-icon">🥾</div>
+          <div class="sport-icon"></div>
           <div class="sport-text">
             <h3>Hiking</h3>
             <p>Trail and mountain hiking. Swedes know the best fjälls.</p>
@@ -845,10 +838,7 @@
             </svg>
             LinkedIn
           </a>
-          <a href="mailto:your@email.com" class="btn btn-ghost">
-            <!-- Add your email address -->
-            ✉ Email
-          </a>
+          <a href="mailto:petertroll@protonmail.com" class="btn btn-ghost">Email</a>
         </div>
       </div>
     </section>
