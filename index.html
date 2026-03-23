@@ -7,21 +7,22 @@
   <meta name="description" content="Peter Troll — Co-founder & Head of IoT Development at IPercept. Industrial AI, IoT, robotics, and mechatronics engineering." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:           #060d18;
-      --bg-card:      #0b1525;
-      --bg-hover:     #0f1e36;
-      --border:       #152030;
-      --border-light: #1d2f46;
-      --accent:       #3b82f6;
-      --accent-glow:  rgba(59, 130, 246, 0.15);
-      --text:         #eef2f7;
-      --text-muted:   #7a99b8;
-      --text-faint:   #2e4460;
+      --bg:           #f5f2ed;
+      --bg-warm:      #efeae2;
+      --bg-card:      #fffefb;
+      --bg-hover:     #f9f6f0;
+      --border:       #e0d9cf;
+      --border-dark:  #c9bfb0;
+      --accent:       #2c6fad;
+      --accent-light: #e8f0f9;
+      --text:         #1e1a16;
+      --text-muted:   #6b6056;
+      --text-faint:   #a89f93;
       --radius:       8px;
       --max-w:        720px;
       --font:         'Inter', system-ui, -apple-system, sans-serif;
@@ -31,12 +32,10 @@
 
     body {
       background-color: var(--bg);
-      background-image:
-        radial-gradient(ellipse 90% 60% at 50% -5%, rgba(59, 130, 246, 0.10) 0%, transparent 65%);
       color: var(--text);
       font-family: var(--font);
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -45,7 +44,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(6, 13, 24, 0.80);
+      background: rgba(245, 242, 237, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -63,10 +62,10 @@
 
     .nav-logo {
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
       text-decoration: none;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
@@ -81,7 +80,6 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 400;
-      letter-spacing: 0.01em;
       transition: color 0.2s;
     }
 
@@ -95,7 +93,7 @@
     }
 
     section { padding: 88px 0 0; }
-    section:last-of-type { padding-bottom: 88px; }
+    section:last-of-type { padding-bottom: 96px; }
 
     .section-label {
       font-size: 11px;
@@ -104,7 +102,6 @@
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 12px;
-      opacity: 0.8;
     }
 
     h2 {
@@ -112,7 +109,7 @@
       font-weight: 600;
       color: var(--text);
       margin-bottom: 40px;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
     }
 
     /* ── Divider ── */
@@ -124,7 +121,7 @@
 
     /* ── Hero ── */
     #hero {
-      padding-top: 130px;
+      padding-top: 128px;
       display: flex;
       flex-direction: column;
       gap: 28px;
@@ -138,18 +135,17 @@
 
     .avatar {
       flex-shrink: 0;
-      width: 78px;
-      height: 78px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid var(--border-light);
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
+      border: 2px solid var(--border);
     }
 
     .hero-meta h1 {
       font-size: 26px;
       font-weight: 600;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.025em;
       line-height: 1.2;
       color: var(--text);
       margin-bottom: 5px;
@@ -189,7 +185,6 @@
       font-weight: 500;
       text-decoration: none;
       transition: all 0.18s;
-      letter-spacing: 0.01em;
     }
 
     .btn:active { transform: scale(0.97); }
@@ -200,21 +195,18 @@
       border: 1px solid transparent;
     }
 
-    .btn-primary:hover {
-      background: #4f90ff;
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-    }
+    .btn-primary:hover { background: #2460a0; }
 
     .btn-ghost {
-      background: transparent;
+      background: var(--bg-card);
       color: var(--text-muted);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border);
     }
 
     .btn-ghost:hover {
-      background: var(--bg-card);
+      background: var(--bg-warm);
       color: var(--text);
-      border-color: #243550;
+      border-color: var(--border-dark);
     }
 
     .hero-tags {
@@ -225,22 +217,21 @@
 
     .tag {
       font-size: 11px;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: 20px;
-      background: transparent;
-      border: 1px solid var(--border-light);
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
       color: var(--text-faint);
       letter-spacing: 0.02em;
     }
 
-    /* ── Timeline (experience / education) ── */
+    /* ── Timeline ── */
     .timeline {
       display: flex;
       flex-direction: column;
-      border-left: 1px solid var(--border);
+      border-left: 1px solid var(--border-dark);
       margin-left: 4px;
       padding-left: 28px;
-      gap: 0;
     }
 
     .timeline-item {
@@ -254,11 +245,11 @@
       content: '';
       position: absolute;
       left: -33px;
-      top: 6px;
+      top: 7px;
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--border-light);
+      background: var(--border-dark);
       border: 2px solid var(--bg);
     }
 
@@ -286,7 +277,6 @@
       color: var(--accent);
       font-weight: 400;
       margin-bottom: 8px;
-      opacity: 0.85;
     }
 
     .timeline-content p {
@@ -299,14 +289,13 @@
     .skills-list {
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
 
     .skill-row {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 190px 1fr;
       gap: 16px;
-      padding: 16px 0;
+      padding: 15px 0;
       border-bottom: 1px solid var(--border);
       align-items: baseline;
     }
@@ -326,7 +315,7 @@
     }
 
     .skills-note {
-      margin-top: 24px;
+      margin-top: 20px;
       font-size: 12px;
       color: var(--text-faint);
       letter-spacing: 0.02em;
@@ -352,7 +341,7 @@
     }
 
     .project-card:hover {
-      border-color: var(--border-light);
+      border-color: var(--border-dark);
       background: var(--bg-hover);
       transform: translateY(-2px);
     }
@@ -375,29 +364,16 @@
       font-size: 11px;
       color: var(--accent);
       font-weight: 500;
-      opacity: 0.7;
       letter-spacing: 0.02em;
     }
 
     /* ── Sports ── */
     .klassiker-block {
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border-dark);
       border-radius: var(--radius);
       padding: 28px 32px;
       margin-bottom: 40px;
-      background: linear-gradient(135deg, rgba(11, 21, 37, 0.6) 0%, rgba(6, 13, 24, 0.8) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .klassiker-block::after {
-      content: '';
-      position: absolute;
-      top: -40px; right: -40px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%);
-      pointer-events: none;
+      background: var(--bg-card);
     }
 
     .klassiker-block .kl-label {
@@ -406,7 +382,6 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      opacity: 0.8;
       margin-bottom: 8px;
     }
 
@@ -422,7 +397,7 @@
       font-size: 13px;
       color: var(--text-muted);
       max-width: 480px;
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 24px;
     }
 
@@ -436,7 +411,7 @@
       padding: 12px 14px;
       border: 1px solid var(--border);
       border-radius: 6px;
-      background: rgba(255,255,255,0.02);
+      background: var(--bg-warm);
     }
 
     .kl-event .ev-name {
@@ -799,7 +774,7 @@
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/peter-troll/" target="_blank" rel="noopener" class="btn btn-primary">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              <path d="M20.447 20.452h-3.554v-5.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             LinkedIn
           </a>
