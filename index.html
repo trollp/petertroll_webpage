@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Troll — Co-founder & Head of IoT Development</title>
+  <meta name="description" content="Peter Troll — Co-founder & Head of IoT Development at IPercept. Industrial AI, IoT, robotics, and mechatronics engineering." />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0d0d0d;
+      --bg-card:    #151515;
+      --bg-hover:   #1c1c1c;
+      --border:     #222;
+      --accent:     #4f9cf9;
+      --accent-dim: #2a5a99;
+      --text:       #e8e8e8;
+      --text-muted: #888;
+      --text-faint: #444;
+      --radius:     10px;
+      --max-w:      760px;
+      --font:       'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+    /* ─── Nav ───────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ─── Layout ────────────────────────────────────────────────────── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 96px 0 0;
+    }
+
+    section:last-of-type { padding-bottom: 96px; }
+
+    /* ─── Section headings ──────────────────────────────────────────── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────────────── */
+    #hero {
+      padding-top: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.04em;
+      user-select: none;
+    }
+
+    .hero-meta h1 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .hero-meta .title {
+      color: var(--text-muted);
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .hero-meta .title strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-bio {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #bbb;
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #6aaeff; }
+
+    .btn-ghost {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-hover);
+      color: var(--text);
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    /* ─── Divider ───────────────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 96px 0 0;
+    }
+
+    /* ─── Experience ────────────────────────────────────────────────── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0 32px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-date {
+      font-size: 13px;
+      color: var(--text-muted);
+      padding-top: 2px;
+      line-height: 1.5;
+    }
+
+    .timeline-content h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .timeline-content .org {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .timeline-content p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── Skills ────────────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent-dim);
+      background: var(--bg-hover);
+    }
+
+    .skill-card .skill-icon {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .skill-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .skills-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-faint);
+    }
+
+    /* ─── Projects ──────────────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-dim);
+      background: var(--bg-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-card .project-icon {
+      font-size: 22px;
+    }
+
+    .project-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .project-card .project-link {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ─── Sports / Klassiker ────────────────────────────────────────── */
+    .klassiker-banner {
+      background: linear-gradient(135deg, #111827, #1a2540);
+      border: 1px solid #1e3a6e;
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .klassiker-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px; height: 100%;
+      background: radial-gradient(ellipse at right, rgba(79,156,249,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .klassiker-banner .banner-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .klassiker-banner h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .klassiker-banner p {
+      font-size: 14px;
+      color: #8ba5c8;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .klassiker-events {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .klassiker-event {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .klassiker-event .ev-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .klassiker-event .ev-desc {
+      font-size: 12px;
+      color: #6a85a8;
+    }
+
+    .klassiker-event .ev-result {
+      font-size: 12px;
+      color: var(--text-faint);
+      margin-top: 4px;
+    }
+
+    .sports-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sport-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sport-item:last-child { border-bottom: none; }
+
+    .sport-item .sport-icon {
+      font-size: 22px;
+      width: 36px;
+      text-align: center;
+    }
+
+    .sport-item .sport-text h3 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .sport-item .sport-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ─── Education ─────────────────────────────────────────────────── */
+    .edu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* reuse timeline styles */
+
+    /* ─── Contact ───────────────────────────────────────────────────── */
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-faint);
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      h2 { font-size: 22px; }
+
+      .nav-links { display: none; }
+
+      #hero { padding-top: 100px; }
+
+      .hero-meta h1 { font-size: 22px; }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .timeline-date { font-size: 12px; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+
+      .klassiker-events { grid-template-columns: 1fr; }
+
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+
+      .contact-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">PT</a>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#sports">Sports</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ───────────────────────────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-top">
+        <div class="avatar">PT</div>
+        <div class="hero-meta">
+          <h1>Peter Troll</h1>
+          <div class="title">Co-founder &amp; Head of IoT Development at <strong>IPercept</strong></div>
+        </div>
+      </div>
+
+      <p class="hero-bio">
+        Co-Founder and Head of IoT Development at IPercept, applying research engineering skills to build innovative industrial AI products. Focused on scalable, robust, and user-friendly solutions. Previously Research Engineer at KTH Royal Institute of Technology.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/peter-troll/" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag">Industrial AI</span>
+        <span class="tag">IoT Development</span>
+        <span class="tag">Robotics &amp; Mechatronics</span>
+        <span class="tag">Engineering Leadership</span>
+        <span class="tag">Sweden</span>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ── Experience ──────────────────────────────────────────────────── -->
+    <section id="experience">
+      <div class="section-label">Career</div>
+      <h2>Experience</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2021 – Present</div>
+          <div class="timeline-content">
+            <h3>Co-founder &amp; Head of IoT Development</h3>
+            <div class="org">IPercept · Stockholm, Sweden</div>
+            <p>Building industrial AI for CNC machine monitoring. Leading development of the Motion Pattern Method™, CNC Copilot™, and Machine Health Model. Presented at NVIDIA GTC. Operating at the frontier of Physical AI and industrial IoT.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Sep 2019 – Sep 2021</div>
+          <div class="timeline-content">
+            <h3>Research Engineer</h3>
+            <div class="org">KTH Royal Institute of Technology · Stockholm, Sweden</div>
+            <p>Applied research engineering in a technical university environment, bridging academic research and practical engineering solutions.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jul 2016 – Jan 2019</div>
+          <div class="timeline-content">
+            <h3>Engineering Trainee</h3>
+            <div class="org">AUDI HUNGARIA MOTOR Kft. · Hungary</div>
+            <p>Engineering traineeship at one of Europe's largest automotive manufacturing facilities. Recipient of the AUDI HUNGARIA Future's Engineers Scholarship.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2016 – 2017</div>
+          <div class="timeline-content">
+            <h3>Junior Templeton Fellow</h3>
+            <div class="org">John Templeton Foundation</div>
+            <p>Selected as a Jr Templeton Fellow — a competitive fellowship recognising early-career researchers and innovators.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ── Education ───────────────────────────────────────────────────── -->
+    <section id="education">
+      <div class="section-label">Academic</div>
+      <h2>Education</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-date">2017 – 2019</div>
+          <div class="timeline-content">
+            <h3>MSc Mechatronics, Robotics &amp; Automation Engineering</h3>
+            <div class="org">Budapest University of Technology and Economics</div>
+            <p>Graduate engineering degree combining mechanical, electrical, and computer engineering disciplines.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2013 – 2017</div>
+          <div class="timeline-content">
+            <h3>BSc Mechanical Engineering</h3>
+            <div class="org">Budapest University of Technology and Economics</div>
+            <p>Undergraduate engineering degree. Participated in the Pneumobil project — a Bosch Rexroth compressed-air vehicle competition (2015–2016).</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ── Skills ──────────────────────────────────────────────────────── -->
+    <section id="skills">
+      <div class="section-label">Expertise</div>
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h3>IoT Development</h3>
+          <p>End-to-end IoT systems for industrial environments — hardware, firmware, cloud connectivity.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🤖</div>
+          <h3>Industrial AI</h3>
+          <p>Machine monitoring, anomaly detection, and AI-driven insights for CNC and manufacturing systems.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🔬</div>
+          <h3>Robotics &amp; Mechatronics</h3>
+          <p>Systems integration across mechanical, electrical, and software domains. MSc background at BME.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <h3>LabVIEW</h3>
+          <p>Data acquisition, signal processing, and instrumentation using National Instruments LabVIEW.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🏗️</div>
+          <h3>Engineering Leadership</h3>
+          <p>Co-founder experience — driving product, team, and technical strategy from zero to production.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🖥️</div>
+          <h3>Self-Hosted &amp; Home Lab</h3>
+          <p>Hobby-grade infrastructure tinkering — self-hosted services, networking, and home automation.</p>
+        </div>
+
+      </div>
+
+      <!-- Add your tech stack here -->
+      <p class="skills-note">Languages: English · German</p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ── Projects ────────────────────────────────────────────────────── -->
+    <section id="projects">
+      <div class="section-label">Side Work</div>
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- Add your projects here -->
+
+        <a href="#" class="project-card" title="Self-hosted home lab">
+          <div class="project-icon">🏠</div>
+          <h3>Home Lab</h3>
+          <p>Self-hosted infrastructure running various services locally — DNS, media, monitoring, and more. Because the cloud is just someone else's computer.</p>
+          <span class="project-link">Self-hosted · Personal</span>
+        </a>
+
+        <a href="#" class="project-card" title="Home automation">
+          <div class="project-icon">🔌</div>
+          <h3>Home Automation</h3>
+          <p>IoT tinkering at home — sensors, automations, and integrations. Applying the same thinking as industrial IoT but on a smaller (and more personal) scale.</p>
+          <span class="project-link">IoT · Home</span>
+        </a>
+
+        <a href="#" class="project-card" title="Monitoring stack">
+          <div class="project-icon">📡</div>
+          <h3>Self-Hosted Monitoring</h3>
+          <p>Observability stack for home services — metrics, dashboards, and alerting. Because you can't improve what you don't measure.</p>
+          <span class="project-link">Infra · Self-hosted</span>
+        </a>
+
+        <a href="https://www.linkedin.com/company/ipercept/" target="_blank" rel="noopener" class="project-card" title="IPercept">
+          <div class="project-icon">🏭</div>
+          <h3>IPercept</h3>
+          <p>Co-founded and built an industrial AI platform for CNC machine monitoring. Motion Pattern Method™, CNC Copilot™, Machine Health Model. Presented at NVIDIA GTC.</p>
+          <span class="project-link">ipercept.io →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ── Sports ──────────────────────────────────────────────────────── -->
+    <section id="sports">
+      <div class="section-label">Outside Work</div>
+      <h2>Sports &amp; Activities</h2>
+
+      <!-- Svenska Klassikern highlight -->
+      <div class="klassiker-banner">
+        <div class="banner-label">🏅 Achievement</div>
+        <h3>Svenska Klassikern — Completed</h3>
+        <p>One of Sweden's most prestigious multi-sport achievements: completing all four classic events in a single year. A test of endurance across ski, bike, run, and open water swim.</p>
+
+        <div class="klassiker-events">
+          <div class="klassiker-event">
+            <div class="ev-name">⛷ Vasaloppet</div>
+            <div class="ev-desc">90 km cross-country ski · Sälen → Mora</div>
+            <div class="ev-result"><!-- Add year / finish time --></div>
+          </div>
+          <div class="klassiker-event">
+            <div class="ev-name">🚴 Vätternrundan</div>
+            <div class="ev-desc">300 km cycling · Around Lake Vättern</div>
+            <div class="ev-result"><!-- Add year / finish time --></div>
+          </div>
+          <div class="klassiker-event">
+            <div class="ev-name">🏃 Lidingöloppet</div>
+            <div class="ev-desc">30 km trail run · Lidingö</div>
+            <div class="ev-result"><!-- Add year / finish time --></div>
+          </div>
+          <div class="klassiker-event">
+            <div class="ev-name">🏊 Vansbrosimningen</div>
+            <div class="ev-desc">3 km open water swim · Vansbro</div>
+            <div class="ev-result"><!-- Add year / finish time --></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- General sports -->
+      <div class="sports-list">
+        <div class="sport-item">
+          <div class="sport-icon">🚴</div>
+          <div class="sport-text">
+            <h3>Cycling</h3>
+            <p>Long-distance road cycling. Vätternrundan vet.</p>
+          </div>
+        </div>
+        <div class="sport-item">
+          <div class="sport-icon">🏊</div>
+          <div class="sport-text">
+            <h3>Swimming</h3>
+            <p>Open water and pool. Vansbrosimningen finisher.</p>
+          </div>
+        </div>
+        <div class="sport-item">
+          <div class="sport-icon">🥾</div>
+          <div class="sport-text">
+            <h3>Hiking</h3>
+            <p>Trail and mountain hiking. Swedes know the best fjälls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- ── Contact ─────────────────────────────────────────────────────── -->
+    <section id="contact">
+      <div class="section-label">Say Hello</div>
+      <h2>Contact</h2>
+
+      <div class="contact-box">
+        <p>Whether it's industrial AI, IoT systems, or just a good conversation — feel free to reach out.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/peter-troll/" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 24 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="mailto:your@email.com" class="btn btn-ghost">
+            <!-- Add your email address -->
+            ✉ Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Peter Troll · Stockholm, Sweden · Built with plain HTML &amp; CSS</p>
+  </footer>
+
+</body>
+</html>
